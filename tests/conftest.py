@@ -6,7 +6,7 @@ import pytest
 from api.api_manager import ApiManager
 from utils.datagenerator import DataGenerator
 
-LIST_ID = "901521528654"   # лучше тоже вынести в .env
+LIST_ID = "901521528654"
 
 import requests
 from utils.helpers import CLICKUP_API_KEY
@@ -29,10 +29,10 @@ def api_manager(session):
 @pytest.fixture
 def created_task(api_manager):
     """Создаёт задачу перед тестом и удаляет после."""
-    task_name = DataGenerator.fake_name()  # нужен соответствующий метод в DataGenerator
-    response = api_manager.tasks.create_task(LIST_ID, task_name)
+    task_name = DataGenerator.fake_name()
+    response = api_manager.tasks.create_task(LIST_ID, data={"name": task_name})
     assert response.status_code == 200
     task_id = response.json()["id"]
     yield task_id
-    api_manager.tasks.delete_task(task_id)
+    api_manager.tasks.delete_task(task_id, expected_status=204)
 

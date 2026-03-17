@@ -1,6 +1,10 @@
 from utils.datagenerator import DataGenerator
 
-class ProjectData:
+class InvalidProjectData:
     @staticmethod
-    def create_project_data():
-        pass
+    def invalid_task_data():
+        return [
+            {'name': ''},
+            {},
+            {"name": None}
+        ]
