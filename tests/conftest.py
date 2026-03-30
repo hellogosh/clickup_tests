@@ -1,5 +1,9 @@
 import sys
 import os
+
+from enums.browser import BROWSERS
+from utils.browser_setup import BrowserSetup
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import pytest
@@ -11,6 +15,15 @@ LIST_ID = "901521528654"
 import requests
 from utils.helpers import CLICKUP_API_KEY
 from enums.host import BASE_URL
+
+@pytest.fixture(params=BROWSERS)
+def browser(request):
+    playwright, browser, context, page = BrowserSetup.setup(browser_type=request.param)
+    yield page
+    BrowserSetup.teardown(context, browser, playwright)
+
+
+
 
 
 @pytest.fixture
