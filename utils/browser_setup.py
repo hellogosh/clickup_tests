@@ -3,13 +3,14 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
-browser_width = int(os.getenv('BROWSER_WIDTH', '1000'))
-browser_height = int(os.getenv('BROWSER_HEIGHT', '1200'))
-headless_mode = os.getenv('HEADLESS', 'True') == 'True'
+browser_width = int(os.getenv("BROWSER_WIDTH", "1000"))
+browser_height = int(os.getenv("BROWSER_HEIGHT", "1200"))
+headless_mode = os.getenv("HEADLESS", "True") == "True"
+
 
 class BrowserSetup:
     @classmethod
-    def setup(cls, browser_type='chromium', headless = headless_mode):
+    def setup(cls, browser_type="chromium", headless=headless_mode):
         playwright = sync_playwright().start()
         browser = getattr(playwright, browser_type).launch(headless=headless)
         context = browser.new_context()
@@ -19,7 +20,7 @@ class BrowserSetup:
         return playwright, browser, context, page
 
     @classmethod
-    def teardown(cls, context, browser, playwright, trace_file='trace.zip'):
+    def teardown(cls, context, browser, playwright, trace_file="trace.zip"):
         context.tracing.stop(path=trace_file)
         browser.close()
         playwright.stop()

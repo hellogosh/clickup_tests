@@ -1,0 +1,30 @@
+2026-04-14 15:21:07 [32mINFO[0m [32mpytest tests/ui/test_task_ui.py::test_delete_task_via_ui[chromium] (setup)[0m
+-H 'User-Agent : python-requests/2.32.5'\
+-H 'Accept-Encoding : gzip, deflate'\
+-H 'Accept : application/json'\
+-H 'Connection : keep-alive'\
+-H 'Authorization : pk_278560519_30J0COUP8U8S6PHV0FLEGQ6VYGN4Y3BT'\
+-H 'Content-Type : application/json'\
+-H 'Content-Length : 17' \
+-d '{"name": "watch"}'
+2026-04-14 15:21:33 [32mINFO[0m [32mpytest tests/ui/test_task_ui.py::test_delete_task_via_ui[chromium] [0m
+-H 'User-Agent : python-requests/2.32.5'\
+-H 'Accept-Encoding : gzip, deflate'\
+-H 'Accept : application/json'\
+-H 'Connection : keep-alive'\
+-H 'Authorization : pk_278560519_30J0COUP8U8S6PHV0FLEGQ6VYGN4Y3BT'\
+-H 'Content-Type : application/json' \
+-d '' 
+
+2026-04-14 15:21:33 [32mINFO[0m 	RESPONSE:
+STATUS_CODE:[31m404[0m
+DATA: [31m{"err":"Task not found, deleted","ECODE":"ITEM_013"}[0m
+2026-04-14 15:21:33 [32mINFO[0m [32mpytest tests/ui/test_task_ui.py::test_delete_task_via_ui[chromium] (teardown)[0m
+-H 'User-Agent : python-requests/2.32.5'\
+-H 'Accept-Encoding : gzip, deflate'\
+-H 'Accept : application/json'\
+-H 'Connection : keep-alive'\
+-H 'Authorization : pk_278560519_30J0COUP8U8S6PHV0FLEGQ6VYGN4Y3BT'\
+-H 'Content-Type : application/json'\
+-H 'Content-Length : 0' \
+-d ''

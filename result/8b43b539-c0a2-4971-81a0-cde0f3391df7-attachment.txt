@@ -1,0 +1,12 @@
+2026-04-10 15:27:41 [32mINFO[0m [32mpytest tests/test_tasks.py::test_update_nonexistent_task [0m
+-H 'User-Agent : python-requests/2.32.5'\
+-H 'Accept-Encoding : gzip, deflate'\
+-H 'Accept : application/json'\
+-H 'Connection : keep-alive'\
+-H 'Authorization : pk_278560519_30J0COUP8U8S6PHV0FLEGQ6VYGN4Y3BT'\
+-H 'Content-Type : application/json'\
+-H 'Content-Length : 2' \
+
+2026-04-10 15:27:41 [32mINFO[0m 	RESPONSE:
+STATUS_CODE:[31m401[0m
+DATA: [31m{"err":"Team not authorized","ECODE":"OAUTH_027"}[0m

@@ -1,1 +1,1 @@
-BROWSERS = ['chromium']
+BROWSERS = ["chromium"]

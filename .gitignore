@@ -1,7 +1,32 @@
 
+# Virtual environment
 venv/
+.venv/
+env/
+ENV/
+
+# Python cache
 __pycache__/
-*.pyc
-.env
+*.py[cod]
+*.so
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+#secrets
+.env
+.env.local
+.env.*.local
+
+# Allure reports
+allure-results/
+allure-report/
+
+# IDE
 .idea/
+.vscode/
+*.iml
+
+# Playwright traces
+trace.zip
+test-results/
